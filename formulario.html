@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta viewport="width=device-width, initial-scale=1.0" />
+
+  <title>Formulário Cadastral Pessoa Física</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link href="css/form-style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="col-md-8 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <strong>Cadastro Pessoa Física </strong>
+          </h3>
+        </div>
+      </div>
+      <div class="panel-body">
+        <form role="form" id="form" name="form">
+          <div class="form-group">
+            <input type="text" name="nome_completo" id="nome_completo" class="form-control" placeholder=" Nome Completo"
+              data-js="nome_completo" tabindex="1" pattern="[A-Za-zÀ-ú ']{4,}"
+              oninvalid="this.setCustomValidity('Informe o nome completo e sem abreviações');" required />
+          </div>
+          <div class="form-group">
+            <input type="text" name="data_nascimento" id="data_nascimento" class="form-control input-data"
+              placeholder="Data de Nascimento" data-js="data_nascimento" tabindex="1"
+              pattern="\d{1,2}[^a-zA-Z0-9.]\d{1,2}[^a-zA-Z0-9.]\d{4}" oninput="this.setCustomValidity('');"
+              oninvalid="this.setCustomValidity('Sua data de nascimento é obrigatória.');" required />
+          </div>
+          <div class="form-group" required>
+            <label class="radio-inline form-check-inline" for="sexo-0 ">
+              <input type="radio" name="sexo" id="sexo-0" value="Masculino" />Masculino</label>
+            <label class="radio-inline form-check-inline" for="sexo-1">
+              <input type="radio" name="sexo " id="sexo-1" value="Feminino" />Feminino</label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="cpf" id="cpf" maxlength="14" class="form-control" placeholder="CPF" data-js="cpf"
+              tabindex="1" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" oninput="this.setCustomValidity('');"
+              oninvalid="this.setCustomValidity('CPF inválido.');" required />
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-5">
+              <div class="form-group">
+                <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço"
+                  data-js="enderecoText" tabindex="1" oninput="this.setCustomValidity('');"
+                  oninvalid="this.setCustomValidity('Endereço inválido.');" required />
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <div class="form-group">
+                <input type="text" name="bairro" id="bairro" class="form-control" placeholder="Bairro"
+                  data-js="enderecoText" tabindex="1" oninput="this.setCustomValidity('');"
+                  oninvalid="this.setCustomValidity('Bairro inválido');" required />
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2">
+              <div class="form-group">
+                <input type="text" name="numero" id="numero" class="form-control" placeholder="Número" data-js="numero"
+                  tabindex="1" oninput="this.setCustomValidity('');"
+                  oninvalid="this.setCustomValidity('Informe o número.');" required />
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="form-group">
+                <input type="text" name="complemento" id="complemento" class="form-control" placeholder="Complemento"
+                  data-js="enderecoText" tabindex="1" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="form-group">
+                <input type="text" name="cep" id="cep" class="form-control" placeholder="CEP" data-js="cep" tabindex="1"
+                  oninput="this.setCustomValidity('');" oninvalid="this.setCustomValidity('CEP inválido.');" required />
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="form-group">
+                <input type="text" name="estado" id="estado" class="form-control" placeholder="Estado"
+                  data-js="estadoPais" tabindex="1" oninput="this.setCustomValidity('');"
+                  oninvalid="this.setCustomValidity('Estado inválido.');" required />
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="form-group">
+                <input type="text" name="pais" id="pais" class="form-control" placeholder="País" data-js="estadoPais"
+                  tabindex="2" oninput="this.setCustomValidity('');"
+                  oninvalid="this.setCustomValidity('País inválido.');" required />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="telefone" id="telefone" class="form-control" placeholder="Telefone (99) 999999999"
+              data-js="telefone" tabindex="4" oninput="this.setCustomValidity('');"
+              oninvalid="this.setCustomValidity('Telefone inválido.');" required minlength="10" />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" tabindex="4"
+              oninput="this.setCustomValidity('');" oninvalid="this.setCustomValidity('Email inválido.');" required />
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" tabindex="5"
+                  required minlength="8" />
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="form-group">
+                <input type="password" name="confirmacao_senha" id="confirmacao_senha" class="form-control"
+                  placeholder="Confirme sua senha" tabindex="6" minlength="8" required />
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="checkbox">
+              <label>
+                <input id="login-remember" type="checkbox" name="remember" value="1" required />
+                Declaro, sob penas da lei, que as informações prestadas são
+                verdadeiras
+              </label>
+            </div>
+          </div>
+          <div class="col-md-offset-10">
+            <div class="input-group">
+              <input type="submit" class="btn btn-success" value="Cadastrar">
+            </div>
+          </div>
+          <div class=" form-group"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+<script src="js/form-mask.js"></script>
+<script src="js/form-validator.js"></script>
+
+</html>
